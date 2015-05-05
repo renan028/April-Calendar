@@ -60,21 +60,19 @@
   \if\@calendarmode\@CALtrue\else\PackageWarning{calendar}{The '\day' macro is expected to be used in the 'calendar' environment!}\fi
   \ifnum\@currentdaynum>7\global\@currentdaynum=1\fi
   \global\advance\@currentdaynum by 1
-  %\dayheader{##1}{\thecalendardate}
-  \def\daysep{\vskip1pt\hrule\vskip1pt}
+  \dayheader{##1}{\thecalendardate}\def\daysep{\vskip1pt\hrule\vskip1pt}
   \activities{##2}
   \addtocounter{calendardate}{1}
   \ifnum\@currentdaynum>7\@arraycr\hline\else&\fi
   }
 \def\finishCalendar{
-  \ifnum\@currentdaynum=7 \\\hline\else
   \ifnum\@currentdaynum=6 &\\\hline\else
   \ifnum\@currentdaynum=5 &&\\\hline\else
   \ifnum\@currentdaynum=4 &&&\\\hline\else
   \ifnum\@currentdaynum=3 &&&&\\\hline\else
   \ifnum\@currentdaynum=2 &&&&&\\\hline\else
   \ifnum\@currentdaynum=1 &&&&&&\\\hline
-  \fi\fi\fi\fi\fi\fi\fi
+  \fi\fi\fi\fi\fi\fi
 }
   \def\BlankDay{
   \if\@calendarmode\@CALtrue\else\PackageWarning{calendar}{The '\calendarday' macro is expected to be used in the 'calendar' environment!}\fi
